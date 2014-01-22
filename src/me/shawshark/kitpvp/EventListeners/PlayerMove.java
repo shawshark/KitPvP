@@ -23,7 +23,7 @@ public class PlayerMove implements Listener {
 		/* Check if it's a player. */
 		if(e.getPlayer() instanceof Player ) {
 			
-			/* Create a var. */
+			/* Create a variable. */
 			Player p = e.getPlayer();
 			
 			/* Check if player is in world 'world' */
