@@ -36,10 +36,12 @@ public class PlayerDeath implements Listener {
 				p.getInventory().clear();
 				e.getDrops().clear();
 			}
+			
 			if(p instanceof Player && e.getEntity().getKiller() instanceof Player) {
 				Player pkiller = e.getEntity().getKiller();
 				e.setDeathMessage(ChatColor.RED + ""+p.getName() + " was killed by " + e.getEntity().getKiller().getName());
 				
+				/* Get a number between 0 and 200 and give them that number in credits. */
 				Random rand = new Random();
 				int randomNumber = rand.nextInt(200);
 				int i = Math.round(randomNumber);
