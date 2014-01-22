@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.potion.PotionEffect;
 
 public class PlayerJoin implements Listener {
 	
@@ -21,13 +22,24 @@ public class PlayerJoin implements Listener {
 		Player p = e.getPlayer();
 		if(!p.hasPlayedBefore()) {
 			e.setJoinMessage(ChatColor.GREEN + "[Welcome] " + p.getName() + " To the server!");
-			/**
-			 * Change above messge.. only for debugging now...
-			 */
+			
 			m.sd.setdefaults(p);
 		} else {
-			e.setJoinMessage(null);
+			e.setJoinMessage(ChatColor.BLUE + "+ " + e.getPlayer().getName() + " has joined.");
 		}
+		
+		for(PotionEffect pe : p.getActivePotionEffects()) {
+			p.removePotionEffect(pe.getType());
+		}
+	         
+		
+		p.getInventory().setHelmet(null);
+		p.getInventory().setChestplate(null);
+		p.getInventory().setLeggings(null);
+		p.getInventory().setBoots(null);
+		
+		p.getInventory().clear();
+		
 		m.s.spawn(p);
 		m.usb.updateforeveryone();
 	}
