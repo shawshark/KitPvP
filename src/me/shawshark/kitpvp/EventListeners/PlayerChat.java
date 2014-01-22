@@ -23,16 +23,23 @@ public class PlayerChat implements Listener {
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent e) {
 		Player p = e.getPlayer();
+		
+		/* Cancel the vanilla chat. */
 		e.setCancelled(true);
 		
 		PermissionUser user = PermissionsEx.getUser(p);
 		
+		/* Get players prefix. */
 		String getprefix = user.getPrefix();
+		
+		/* Colorize the prefix. */
 		String prefix = ChatColor.translateAlternateColorCodes('&', getprefix);
 		
+		/* Get players kills and deaths score. */
 		String kills = m.getConfig().getString("server.players.player.kills." + p.getName());	
 		String deaths = m.getConfig().getString("server.players.player.deaths." + p.getName());
 		
+		/* Broadcast the users message along side with there kills, deaths, prefix and message. */
 		Bukkit.getServer().broadcastMessage(ChatColor.RED + "K: " + kills + " D: " + deaths + " " + prefix + " " + p.getName() + ": " + e.getMessage());
 	}
 }
