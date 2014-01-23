@@ -181,7 +181,7 @@ public class PlayerInteract implements Listener {
 				    	 /* Get kit name */
 				    	 if(s.getLine(1).contains("default")) {
 				    		 
-				    		/* Check to see if user is has enough credits. */
+				    		/* Check to see if user has enough credits. */
 				    		//if(playerscredits > 0) {
 				    			
 				    			/* Add them to list so '/kit' can be run. */
@@ -197,7 +197,7 @@ public class PlayerInteract implements Listener {
 				    	 
 				    	 else if(s.getLine(1).contains("somekit")) {
 				    		 
-				    		/* Check to see if user is has enough credits. */
+				    		/* Check to see if user has enough credits. */
 				    		if(playerscredits > 999) {
 				    			
 				    			/* Make them pay for the kit. */
