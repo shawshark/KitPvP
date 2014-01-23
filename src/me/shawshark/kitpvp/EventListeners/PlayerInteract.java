@@ -232,10 +232,10 @@ public class PlayerInteract implements Listener {
 		int playerscredits = m.getConfig().getInt("server.players.player.credits." + p.getName()); 
 		
 		/* Sum up the price */
-		int finalscore = playerscredits - price;
+		int finalprice = playerscredits - price;
 		
 		/* Set the players new credits. */
-		m.getConfig().set("server.players.player.credits." + p.getName(), finalscore);
+		m.getConfig().set("server.players.player.credits." + p.getName(), finalprice);
 		
 		/* Save config. */
 		m.saveConfig();
