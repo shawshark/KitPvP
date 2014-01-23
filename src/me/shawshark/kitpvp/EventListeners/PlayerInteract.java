@@ -195,7 +195,7 @@ public class PlayerInteract implements Listener {
 				    		}
 					     //} 
 				    	 
-				    	 else if(s.getLine(1).contains("defaultkit")) {
+				    	 else if(s.getLine(1).contains("default")) {
 				    		 
 				    		/* Check to see if user is has enough credits. */
 				    		if(playerscredits > 0) {
