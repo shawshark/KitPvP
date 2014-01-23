@@ -198,7 +198,7 @@ public class PlayerInteract implements Listener {
 				    	 else if(s.getLine(1).contains("somekit")) {
 				    		 
 				    		/* Check to see if user is has enough credits. */
-				    		if(playerscredits > 1000) {
+				    		if(playerscredits > 999) {
 				    			
 				    			/* Make them pay for the kit. */
 				    			setplayerscredits(p, 1000);
