@@ -241,7 +241,7 @@ public class PlayerInteract implements Listener {
 		m.saveConfig();
 		
 		/* Warn them that they brought a kit. */
-		p.sendMessage(ChatColor.RED + "Shop: " + ChatColor.GOLD + "You purchased a kit for " + ChatColor.GOLD + price + ChatColor.GOLD + " credits!");
+		p.sendMessage(ChatColor.RED + "Shop: " + ChatColor.GOLD + "You purchased a kit for " + ChatColor.RED + price + ChatColor.GOLD + " credits!");
 		
 		/* Update there scoreboard. */
 		m.usb.updatescoreboard(p);
