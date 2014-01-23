@@ -179,7 +179,7 @@ public class PlayerInteract implements Listener {
 				    	 int playerscredits = m.getConfig().getInt("server.players.player.credits." + p.getName());
 				    	 
 				    	 /* Get kit name */
-				    	 if(s.getLine(1).contains("defaultkit")) {
+				    	 if(s.getLine(1).contains("default")) {
 				    		 
 				    		/* Check to see if user is has enough credits. */
 				    		//if(playerscredits > 0) {
@@ -195,19 +195,24 @@ public class PlayerInteract implements Listener {
 				    		}
 					     //} 
 				    	 
-				    	 else if(s.getLine(1).contains("default")) {
+				    	 else if(s.getLine(1).contains("somekit")) {
 				    		 
 				    		/* Check to see if user is has enough credits. */
-				    		if(playerscredits > 0) {
+				    		if(playerscredits > 1000) {
+				    			
+				    			/* Make them pay for the kit. */
+				    			setplayerscredits(p, 1000);
 				    			
 				    			/* Add them to list so '/kit' can be run. */
 				    			m.interwithsign.add(p);
 				    			
 				    			/* Run the kit command. */
-				    			p.chat("/kit default");
+				    			p.chat("/kit somekit");
 				    			
 				    			/* They have choosen there kit, remove them from the list. */
 				    			m.interwithsign.remove(p);
+				    		} else {
+				    			p.sendMessage(ChatColor.RED + "Shop: " + ChatColor.GOLD + "Error, You don't have enough credits for this kit!");
 				    		}
 					     } 
 				    	 
